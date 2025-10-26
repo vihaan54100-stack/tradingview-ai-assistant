@@ -1,5 +1,5 @@
 # tradingview-ai-assistant
-a ai which allows u too trade more faster and better
+a ai extension which allows u too trade more faster and better
 ⚡ TradingView AI Assistant – Your Smart Trading Buddy! 🤖💹
 
 Meet TradingView AI Assistant, the ultimate AI companion built to supercharge your trading game! 🚀 Whether you’re a beginner exploring charts or a pro decoding complex indicators, this AI’s got your back.
