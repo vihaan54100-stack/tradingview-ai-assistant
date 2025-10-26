@@ -1,6 +1,11 @@
 // Background service worker for Chrome extension
 console.log('TradingView AI Assistant: Background script loaded');
 
+// Open side panel when extension icon is clicked
+chrome.action.onClicked.addListener((tab) => {
+  chrome.sidePanel.open({ windowId: tab.windowId });
+});
+
 // Listen for messages from popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'chat') {
@@ -76,7 +81,7 @@ Be concise but thorough. Use professional yet accessible language.`;
     });
 
     // Call OpenAI API
-    const model = settings.model || 'gpt-3.5-turbo';
+    const model = settings.model || 'gpt-4o-mini';
     const apiResponse = await callOpenAI(settings.apiKey, model, messages);
 
     return {
