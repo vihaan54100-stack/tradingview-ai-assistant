@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradingView AI Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📈 Trading AI Assistant</h1>
+      <p class="subtitle">Powered by ChatGPT</p>
+    </div>
+
+    <div class="status-bar">
+      <div id="connection-status" class="status-indicator">
+        <span class="status-dot"></span>
+        <span id="status-text">Connecting...</span>
+      </div>
+      <div id="current-symbol" class="current-symbol"></div>
+    </div>
+
+    <div class="chat-container" id="chat-container">
+      <div class="welcome-message">
+        <p>👋 Hello! I'm your AI trading assistant.</p>
+        <p>I can help you:</p>
+        <ul>
+          <li>Analyze charts and price movements</li>
+          <li>Provide buy/sell/put recommendations</li>
+          <li>Identify bullish or bearish trends</li>
+          <li>Suggest which markets to trade in</li>
+          <li>Analyze your portfolio performance</li>
+        </ul>
+        <p class="hint">Ask me anything about the current chart or your trading strategy!</p>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <textarea 
+        id="user-input" 
+        placeholder="Ask about the chart, get recommendations, or analyze trends..."
+        rows="2"
+      ></textarea>
+      <button id="send-button" class="send-button">
+        <span class="send-icon">▶</span>
+      </button>
+    </div>
+
+    <div class="quick-actions">
+      <button class="quick-btn" data-action="analyze">📊 Analyze Chart</button>
+      <button class="quick-btn" data-action="recommend">💡 Get Recommendation</button>
+      <button class="quick-btn" data-action="trend">📈 Check Trend</button>
+    </div>
+
+    <div class="settings-footer">
+      <button id="settings-button" class="settings-btn">⚙️ Settings</button>
+    </div>
+  </div>
+
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Settings</h2>
+      <div class="setting-group">
+        <label for="api-key">OpenAI API Key:</label>
+        <input type="password" id="api-key" placeholder="sk-...">
+        <p class="help-text">Get your API key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI</a></p>
+      </div>
+      <div class="setting-group">
+        <label for="model-select">Model:</label>
+        <select id="model-select">
+          <option value="gpt-4">GPT-4</option>
+          <option value="gpt-4-turbo-preview">GPT-4 Turbo</option>
+          <option value="gpt-3.5-turbo" selected>GPT-3.5 Turbo</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button id="save-settings" class="btn-primary">Save</button>
+        <button id="cancel-settings" class="btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
